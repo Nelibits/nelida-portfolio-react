@@ -2,9 +2,6 @@ import React, { Component } from "react";
 import axios from "axios";
 import DropzoneComponent from "react-dropzone-component";
 
-// import "../../../node_modules/react-dropzone-component/styles/filepicker.css";
-// import "../../../node_modules/dropzone/dist/min/dropzone.min.css";
-
 export default class PortfolioForm extends Component {
   constructor(props) {
     super(props);
@@ -19,7 +16,7 @@ export default class PortfolioForm extends Component {
       banner_image: "",
       logo: "",
       editMode: false,
-      apiUrl: "https://nelidarodriguez.devcamp.space/portfolio/portfolio_items",
+      apiUrl: "https://jordan.devcamp.space/portfolio/portfolio_items",
       apiAction: "post"
     };
 
@@ -32,7 +29,6 @@ export default class PortfolioForm extends Component {
     this.handleLogoDrop = this.handleLogoDrop.bind(this);
     this.deleteImage = this.deleteImage.bind(this);
 
-
     this.thumbRef = React.createRef();
     this.bannerRef = React.createRef();
     this.logoRef = React.createRef();
@@ -40,18 +36,19 @@ export default class PortfolioForm extends Component {
 
   deleteImage(imageType) {
     axios
-    .delete(
-      `https://api.devcamp.space/portfolio/delete-portfolio-image/${this.state.id}?image_type=${imageType}`,
-      { withCredentials: true }
-    )
-    .then(response => {
-      this.setState({
-        [`${imageType}_url`]: ""
+      .delete(
+        `https://api.devcamp.space/portfolio/delete-portfolio-image/${this.state
+          .id}?image_type=${imageType}`,
+        { withCredentials: true }
+      )
+      .then(response => {
+        this.setState({
+          [`${imageType}_url`]: ""
+        });
+      })
+      .catch(error => {
+        console.log("deleteImage error", error);
       });
-    })
-    .catch(error => {
-      console.log("deleteImage error", error);
-    });
   }
 
   componentDidUpdate() {
@@ -78,7 +75,7 @@ export default class PortfolioForm extends Component {
         position: position || "",
         url: url || "",
         editMode: true,
-        apiUrl: `https://nelidarodriguez.devcamp.space/portfolio/portfolio_items/${id}`,
+        apiUrl: `https://jordan.devcamp.space/portfolio/portfolio_items/${id}`,
         apiAction: "patch",
         thumb_image_url: thumb_image_url || "",
         banner_image_url: banner_image_url || "",
@@ -151,12 +148,12 @@ export default class PortfolioForm extends Component {
   }
 
   handleSubmit(event) {
-      axios({
-        method: this.state.apiAction,
-        url: this.state.apiUrl,
-        data: this.buildForm(),
-        withCredentials: true
-      })
+    axios({
+      method: this.state.apiAction,
+      url: this.state.apiUrl,
+      data: this.buildForm(),
+      withCredentials: true
+    })
       .then(response => {
         if (this.state.editMode) {
           this.props.handleEditFormSubmission();
@@ -289,9 +286,7 @@ export default class PortfolioForm extends Component {
               <img src={this.state.logo_url} />
 
               <div className="image-removal-link">
-                <a onClick={() => this.deleteImage("logo")}>
-                  Remove file
-                </a>
+                <a onClick={() => this.deleteImage("logo")}>Remove file</a>
               </div>
             </div>
           ) : (
