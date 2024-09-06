@@ -1,13 +1,11 @@
-import React, { Component } from 'react';
+import React from "react";
 
 import PortfolioContainer from "../portfolio/portfolio-container";
 
-export default class App extends Component {
-  render() {
-    return (
-      <div>
-        <PortfolioContainer />  
-      </div>
-    );
-  }
+export default function() {
+  return (
+    <div>
+      <PortfolioContainer />
+    </div>
+  );
 }

@@ -28,15 +28,15 @@ export default function() {
               <FontAwesomeIcon icon="envelope" />
             </div>
 
-            <div className="text">nelida@example.com</div>
+            <div className="text">jordan@example.com</div>
           </div>
 
           <div className="bullet-point-group">
             <div className="icon">
-              <FontAwesomeIcon icon="map-location-dot" />
+              <FontAwesomeIcon icon="map-marked-alt" />
             </div>
 
-            <div className="text">Bilbo, Bizkaia</div>
+            <div className="text">Lehi, UT</div>
           </div>
         </div>
       </div>
