@@ -16,7 +16,7 @@ export default class PortfolioForm extends Component {
       banner_image: "",
       logo: "",
       editMode: false,
-      apiUrl: "https://jordan.devcamp.space/portfolio/portfolio_items",
+      apiUrl: "https://nelidarodriguez.devcamp.space/portfolio/portfolio_items",
       apiAction: "post"
     };
 
@@ -175,9 +175,9 @@ export default class PortfolioForm extends Component {
           apiAction: "post"
         });
 
-        [this.thumbRef, this.bannerRef, this.logoRef].forEach(ref => {
-          ref.current.dropzone.removeAllFiles();
-        });
+      //[this.thumbRef, this.bannerRef, this.logoRef].forEach(ref => {
+        //  ref.current.dropzone.removeAllFiles();
+        //});
       })
       .catch(error => {
         console.log("portfolio form handleSubmit error", error);
