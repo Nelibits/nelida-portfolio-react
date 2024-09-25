@@ -3,7 +3,7 @@ import axios from "axios";
 import DropzoneComponent from "react-dropzone-component";
 
 //import filepickerCss from "../../../node_modules/react-dropzone-component/styles/filepicker.css";
-import dropzoneCss from "../../../node_modules/dropzone/dist/min/dropzone.min.css";
+//import dropzoneCss from "../../../node_modules/dropzone/dist/min/dropzone.min.css";
 
 import RichTextEditor from "../forms/rich-text-editor";
 
