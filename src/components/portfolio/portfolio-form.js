@@ -175,9 +175,9 @@ export default class PortfolioForm extends Component {
           apiAction: "post"
         });
 
-      //[this.thumbRef, this.bannerRef, this.logoRef].forEach(ref => {
-        //  ref.current.dropzone.removeAllFiles();
-        //});
+      [this.thumbRef, this.bannerRef, this.logoRef].forEach(ref => {
+          ref.current.dropzone.removeAllFiles();
+        });
       })
       .catch(error => {
         console.log("portfolio form handleSubmit error", error);
